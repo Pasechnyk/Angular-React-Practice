@@ -1,0 +1,13 @@
+div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 80%;
+    margin: 10px;
+    padding-left: 100px;
+}
+
+h4 {
+    text-decoration: underline;
+}
