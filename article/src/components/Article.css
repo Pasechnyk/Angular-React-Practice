@@ -2,10 +2,16 @@ div {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     text-align: center;
     width: 80%;
     margin: 10px;
     padding-left: 100px;
+}
+
+img {
+    scale: 0.5;
+    margin: 0;
 }
 
 h4 {

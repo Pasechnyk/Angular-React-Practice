@@ -3,6 +3,8 @@ import "./Article.css";
 export default function Article() {
     return (
     <div>
+        <img src="https://marinemadnessdotblog.files.wordpress.com/2019/04/sea-bunny-jorunna-parva.jpg"></img>
+
         <p>
         Jorunna parva, commonly known as the sea bunny,
         is a species of dorid nudibranch, a shell-less
