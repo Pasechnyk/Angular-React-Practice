@@ -1,0 +1,14 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <input type="text" placeholder="Title" formControlName="text">
+        <input type="text" placeholder="Deadline" formControlName="deadline">
+        <div class="important">
+            <div>
+                <input type="checkbox" formControlName="isImportant">
+            </div>
+        </div>
+        <div>
+            <button type="submit">Add Task</button>
+        </div>
+    </div>
+</form>

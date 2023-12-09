@@ -1,0 +1,28 @@
+h1 {
+    margin: 10px 20px;
+}
+
+body {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 80%;
+    margin: auto;
+}
+
+div {
+    background-color:whitesmoke;
+    display: block;
+    width: fit-content;
+    padding: 5px 20px;
+    margin: auto;
+}
+
+ul.todo_list {
+    width: 400px;
+    padding: 0 20px;
+
+    list-style-image: url(../icons/unchecked_16.png);
+    list-style-position: inside;
+
+    border-radius: 6px;
+    overflow: hidden;
+}

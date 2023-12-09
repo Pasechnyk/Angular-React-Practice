@@ -1,0 +1,6 @@
+<li [ngClass]="{'completed' : task.isCompleted}">
+    <img class="complete" (click)="completeTask($event, task)" [src]="task.isCompleted ? '../icons/checked_16.png' : '../icons/unchecked_16.png'">
+    <span class="important" [ngClass]="{'important' : task.isImportant}">{{task.text}}</span>
+    <span class="deadline">{{task.deadline}}</span>
+    <img class="delete" (click)="deleteTask(task.id)" [src]="'../icons/delete.png'">
+</li>
