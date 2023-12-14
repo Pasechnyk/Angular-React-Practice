@@ -1,24 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import Event from './Event';
-import './Event.css';
+import '../styles/EventList.css';
 
-const EventList = ({ events }) => {
-  const [likedEvents, setLikedEvents] = useState([]);
-
-  const handleLike = (eventId, isLiked) => {
-    // Update liked events
-    if (isLiked) {
-      setLikedEvents((prevLikedEvents) => [...prevLikedEvents, eventId]);
-    } else {
-      setLikedEvents((prevLikedEvents) => prevLikedEvents.filter((id) => id !== eventId));
-    }
-  };
-
+const EventList = ({ events, onLike, globalLikedEvents }) => {
   return (
-    <div>
-      <p>Liked Events: {likedEvents.length}</p>
+    <div className="container">
       {events.map((event) => (
-        <Event key={event.id} event={event} onLike={handleLike} />
+        <Event
+          key={event.id}
+          event={event}
+          onLike={(isLiked) => onLike(event, isLiked)}
+          isLiked={globalLikedEvents.some((likedEvent) => likedEvent.id === event.id)}
+        />
       ))}
     </div>
   );

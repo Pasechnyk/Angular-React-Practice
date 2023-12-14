@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './Event.css';
+import '../styles/Event.css';
 
-const Event = ({ event, selectedCategory, onLike }) => {
+const Event = ({ event, selectedCategory, onLike, isLiked }) => {
   const [showDetails, setShowDetails] = useState(false);
   const [liked, setLiked] = useState(false);
 
@@ -29,9 +29,9 @@ const Event = ({ event, selectedCategory, onLike }) => {
           <p>Location: {event.location}</p>
         </div>
       )}
-      <button onClick={handleLike} className={liked ? 'liked' : ''}>
-        {liked ? 'Unlike' : 'Like'}
-      </button>
+      <button class="category-filters button" onClick={() => onLike(event.id, !isLiked)}>
+        {isLiked ? 'Unlike' : 'Like'}
+        </button>
     </div>
   );
 };

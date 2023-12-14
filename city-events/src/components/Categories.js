@@ -1,4 +1,7 @@
 import React, { useState } from 'react';
+import '../styles/EventList.css';
+import '../styles/Event.css';
+import '../styles/App.css';
 
 const Categories = ({ categories, onSelectCategory }) => {
   const [selectedCategory, setSelectedCategory] = useState('');
@@ -10,7 +13,7 @@ const Categories = ({ categories, onSelectCategory }) => {
 
   return (
     <div>
-      <h4>Categories</h4>
+      {/* <h4>Categories</h4>
       <ul>
         {categories.map((category) => (
           <li
@@ -21,7 +24,7 @@ const Categories = ({ categories, onSelectCategory }) => {
             {category}
           </li>
         ))}
-      </ul>
+      </ul> */}
     </div>
   );
 };
