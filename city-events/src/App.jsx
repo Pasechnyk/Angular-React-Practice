@@ -2,31 +2,22 @@ import React, { useState, useEffect } from 'react';
 import eventsData from './components/eventsData';
 import EventList from './components/EventList';
 import Categories from './components/Categories';
+import { useEventContext } from '../src/components/EventContext';
 import '../src/styles/App.css';
 
 const App = () => {
-  const [globalLikedEvents, setGlobalLikedEvents] = useState([]);
+  const { globalLikedEvents, handleLike } = useEventContext();
   const [isLoaded, setIsLoaded] = useState(false);
 
   // Load from localStorage
   useEffect(() => {
     const storedLikedEvents = localStorage.getItem('likedEvents');
     if (storedLikedEvents) {
-      setGlobalLikedEvents(JSON.parse(storedLikedEvents));
+      handleLike(JSON.parse(storedLikedEvents));
     }
     setIsLoaded(true);
-  }, []);
+  }, [handleLike]);
 
-  const handleLike = (event, isLiked) => {
-    // Update liked events
-    if (isLiked) {
-      setGlobalLikedEvents((prevLikedEvents) => [...prevLikedEvents, event]);
-    } else {
-      setGlobalLikedEvents((prevLikedEvents) =>
-        prevLikedEvents.filter((likedEvent) => likedEvent.id !== event.id)
-      );
-    }
-  };
 
   const handleDownload = () => {
     console.log(globalLikedEvents);
